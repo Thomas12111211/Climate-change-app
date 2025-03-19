@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
   <style>
-    #climatechange {
+    .scroll-image {
       position: fixed;
+      transition: transform 0.1s;
+    }
+    #icon {
       bottom: 60px;
       right: 90px;
-      transition: transform 0.1s;
+    }
+    #climatechange {
+      bottom: 160px;
+      right: 190px;
     }
     body {
       height: 2000px; /* Ensure the page has enough height to scroll */
@@ -14,7 +20,7 @@
   </style>
 </head>
 <body>
-  <img src="https://cdn-icons-png.flaticon.com/512/489/489969.png" width="100" height="100" alt="Icon">
+  <img id="icon" class="scroll-image" src="https://cdn-icons-png.flaticon.com/512/489/489969.png" width="100" height="100" alt="Icon">
   <h1>Climate helpers</h1>
   <h2>How do you recycle and how does it help?</h2>
   <p style="color:#080808">
@@ -24,17 +30,17 @@
   <p>
     You can use a reusable water bottle instead of using a plastic one every time. After time that adds up to a lot of plastic wasted. You can walk or cycle to school instead of using a car. This [...]
   </p>
-  <img id="climatechange" src="https://as1.ftcdn.net/v2/jpg/05/73/96/92/1000_F_573969248_rkDRwe3jOYGENhrF8tlVw7GFHqSXxq3j.jpg" alt="climate change" width="211" height="211">
+  <img id="climatechange" class="scroll-image" src="https://as1.ftcdn.net/v2/jpg/05/73/96/92/1000_F_573969248_rkDRwe3jOYGENhrF8tlVw7GFHqSXxq3j.jpg" alt="climate change" width="211" height="211">
   <a href="https://www.un.org/en/climatechange/what-is-climate-change">Climate change</a>
 
   <script>
-    const climateChangeImage = document.getElementById('climatechange');
-    console.log(climateChangeImage); // Verify the image is selected
+    const scrollImages = document.querySelectorAll('.scroll-image');
 
     window.addEventListener('scroll', () => {
       const scrollPosition = window.scrollY;
-      console.log('Scroll Position:', scrollPosition); // Log the scroll position
-      climateChangeImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+      scrollImages.forEach(image => {
+        image.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+      });
     });
   </script>
 </body>
