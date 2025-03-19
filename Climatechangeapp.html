@@ -8,6 +8,9 @@
       right: 90px;
       transition: transform 0.1s;
     }
+    body {
+      height: 2000px; /* Ensure the page has enough height to scroll */
+    }
   </style>
 </head>
 <body>
@@ -26,9 +29,11 @@
 
   <script>
     const climateChangeImage = document.getElementById('climatechange');
+    console.log(climateChangeImage); // Verify the image is selected
 
     window.addEventListener('scroll', () => {
       const scrollPosition = window.scrollY;
+      console.log('Scroll Position:', scrollPosition); // Log the scroll position
       climateChangeImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
     });
   </script>
