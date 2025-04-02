@@ -96,39 +96,7 @@ figcaption {
   <label for="d"> I have a deisal car</label><br><br>
   <input type="submit" value="Submit">
 </form>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
-    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
-</head>
-<body>
-    <h1>QR Code Scanner</h1>
-    <div id="reader" style="width: 500px; height: 500px;"></div>
-    <p id="result"></p>
-
-    <script>
-        function onScanSuccess(qrCodeMessage) {
-            document.getElementById('result').innerText = `QR Code detected: ${qrCodeMessage}`;
-        }
-
-        function onScanError(errorMessage) {
-            // Handle scan error
-        }
-
-        const html5QrCode = new Html5Qrcode("reader");
-        const config = { fps: 10, qrbox: 250 };
-
-        html5QrCode.start(
-            { facingMode: "environment" },
-            config,
-            onScanSuccess,
-            onScanError
-        ).catch(err => {
-            console.error(`Unable to start scanning, error: ${err}`);
-        });
-    </script>
-</body>
+  
     <a href="https://www.un.org/en/climatechange/what-is-climate-change">Climate change</a>
 </body>
 </html>
